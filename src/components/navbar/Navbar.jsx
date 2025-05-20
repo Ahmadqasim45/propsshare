@@ -1,8 +1,64 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import navbarLogo from "../../assets/images/logo.png";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = [
+        { id: "home", ref: document.getElementById("home") },
+        { id: "services", ref: document.getElementById("services") },
+        { id: "howItWorks", ref: document.getElementById("howItWorks") },
+        { id: "roadmap", ref: document.getElementById("roadmap") },
+        { id: "market", ref: document.getElementById("market") },
+        { id: "team", ref: document.getElementById("team") },
+        { id: "resources", ref: document.getElementById("resources") },
+      ];
+
+      // Get current scroll position
+      const scrollPosition = window.scrollY + 100; // Adding offset for navbar height
+
+      // Find the current active section
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section.ref) {
+          const offsetTop = section.ref.offsetTop;
+          
+          if (scrollPosition >= offsetTop) {
+            setActiveSection(section.id);
+            break;
+          }
+        }
+      }
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+    
+    // Call once to set initial active section
+    handleScroll();
+
+    // Remove event listener on cleanup
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop - 80, // Offset for navbar height
+        behavior: "smooth"
+      });
+      setActiveSection(sectionId);
+      if (mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    }
+  };
 
   return (
     <>
@@ -18,52 +74,50 @@ const Navbar = () => {
                 className="h-9 w-auto object-contain"
               />
             </div>
-          </div>
-
-          {/* Desktop Navigation - Centered */}
+          </div>          {/* Desktop Navigation - Centered */}
           <div className="flex items-center justify-center flex-1 space-x-8 px-4">
-            <a
-              href="#"
-              className="font-montserrat font-light text-[13px] leading-6 text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:bg-pink-500 after:transform whitespace-nowrap"
+            <button
+              onClick={() => scrollToSection('home')}
+              className={`font-montserrat font-light text-[13px] leading-6 ${activeSection === 'home' ? 'text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:bg-pink-500' : 'text-white/70 hover:text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-pink-500 after:transition-all after:duration-300'} whitespace-nowrap`}
             >
               HOME
-            </a>
-            <a
-              href="#"
-              className="font-montserrat font-light text-[13px] leading-6 text-white/70 hover:text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-pink-500 after:transition-all after:duration-300 whitespace-nowrap"
+            </button>
+            <button
+              onClick={() => scrollToSection('services')}
+              className={`font-montserrat font-light text-[13px] leading-6 ${activeSection === 'services' ? 'text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:bg-pink-500' : 'text-white/70 hover:text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-pink-500 after:transition-all after:duration-300'} whitespace-nowrap`}
             >
               WHAT WE DO
-            </a>
-            <a
-              href="#"
-              className="font-montserrat font-light text-[13px] leading-6 text-white/70 hover:text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-pink-500 after:transition-all after:duration-300 whitespace-nowrap"
+            </button>
+            <button
+              onClick={() => scrollToSection('howItWorks')}
+              className={`font-montserrat font-light text-[13px] leading-6 ${activeSection === 'howItWorks' ? 'text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:bg-pink-500' : 'text-white/70 hover:text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-pink-500 after:transition-all after:duration-300'} whitespace-nowrap`}
             >
               HOW IT WORKS
-            </a>
-            <a
-              href="#"
-              className="font-montserrat font-light text-[13px] leading-6 text-white/70 hover:text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-pink-500 after:transition-all after:duration-300 whitespace-nowrap"
+            </button>
+            <button
+              onClick={() => scrollToSection('roadmap')}
+              className={`font-montserrat font-light text-[13px] leading-6 ${activeSection === 'roadmap' ? 'text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:bg-pink-500' : 'text-white/70 hover:text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-pink-500 after:transition-all after:duration-300'} whitespace-nowrap`}
             >
               ROADMAP
-            </a>
-            <a
-              href="#"
-              className="font-montserrat font-light text-[13px] leading-6 text-white/70 hover:text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-pink-500 after:transition-all after:duration-300 whitespace-nowrap"
+            </button>
+            <button
+              onClick={() => scrollToSection('market')}
+              className={`font-montserrat font-light text-[13px] leading-6 ${activeSection === 'market' ? 'text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:bg-pink-500' : 'text-white/70 hover:text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-pink-500 after:transition-all after:duration-300'} whitespace-nowrap`}
             >
               MARKET
-            </a>
-            <a
-              href="#"
-              className="font-montserrat font-light text-[13px] leading-6 text-white/70 hover:text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-pink-500 after:transition-all after:duration-300 whitespace-nowrap"
+            </button>
+            <button
+              onClick={() => scrollToSection('team')}
+              className={`font-montserrat font-light text-[13px] leading-6 ${activeSection === 'team' ? 'text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:bg-pink-500' : 'text-white/70 hover:text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-pink-500 after:transition-all after:duration-300'} whitespace-nowrap`}
             >
               TEAM
-            </a>
-            <a
-              href="#"
-              className="font-montserrat font-light text-[13px] leading-6 text-white/70 hover:text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-pink-500 after:transition-all after:duration-300 whitespace-nowrap"
+            </button>
+            <button
+              onClick={() => scrollToSection('resources')}
+              className={`font-montserrat font-light text-[13px] leading-6 ${activeSection === 'resources' ? 'text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:bg-pink-500' : 'text-white/70 hover:text-white relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-pink-500 after:transition-all after:duration-300'} whitespace-nowrap`}
             >
               RESOURCES
-            </a>
+            </button>
           </div>
 
           {/* Right section with icons and CTA */}
@@ -210,50 +264,49 @@ const Navbar = () => {
               ? "opacity-100 scale-100"
               : "opacity-0 scale-95 pointer-events-none"
           }`}
-        >
-          <div className="flex flex-col space-y-5 px-2 text-center">
-            <a
-              href="#"
-              className="font-montserrat font-light text-[13px] leading-6 text-white text-center"
+        >          <div className="flex flex-col space-y-5 px-2 text-center">
+            <button
+              onClick={() => scrollToSection('home')}
+              className={`font-montserrat font-light text-[13px] leading-6 ${activeSection === 'home' ? 'text-white' : 'text-white/70 hover:text-white transition-colors'} text-center`}
             >
               HOME
-            </a>
-            <a
-              href="#"
-              className="font-montserrat font-light text-[13px] leading-6 text-white/70 hover:text-white transition-colors"
+            </button>
+            <button
+              onClick={() => scrollToSection('services')}
+              className={`font-montserrat font-light text-[13px] leading-6 ${activeSection === 'services' ? 'text-white' : 'text-white/70 hover:text-white transition-colors'} text-center`}
             >
               WHAT WE DO
-            </a>
-            <a
-              href="#"
-              className="font-montserrat font-light text-[13px] leading-6 text-white/70 hover:text-white transition-colors"
+            </button>
+            <button
+              onClick={() => scrollToSection('howItWorks')}
+              className={`font-montserrat font-light text-[13px] leading-6 ${activeSection === 'howItWorks' ? 'text-white' : 'text-white/70 hover:text-white transition-colors'} text-center`}
             >
               HOW IT WORKS
-            </a>
-            <a
-              href="#"
-              className="font-montserrat font-light text-[13px] leading-6 text-white/70 hover:text-white transition-colors"
+            </button>
+            <button
+              onClick={() => scrollToSection('roadmap')}
+              className={`font-montserrat font-light text-[13px] leading-6 ${activeSection === 'roadmap' ? 'text-white' : 'text-white/70 hover:text-white transition-colors'} text-center`}
             >
               ROADMAP
-            </a>
-            <a
-              href="#"
-              className="font-montserrat font-light text-[13px] leading-6 text-white/70 hover:text-white transition-colors"
+            </button>
+            <button
+              onClick={() => scrollToSection('market')}
+              className={`font-montserrat font-light text-[13px] leading-6 ${activeSection === 'market' ? 'text-white' : 'text-white/70 hover:text-white transition-colors'} text-center`}
             >
               MARKET
-            </a>
-            <a
-              href="#"
-              className="font-montserrat font-light text-[13px] leading-6 text-white/70 hover:text-white transition-colors"
+            </button>
+            <button
+              onClick={() => scrollToSection('team')}
+              className={`font-montserrat font-light text-[13px] leading-6 ${activeSection === 'team' ? 'text-white' : 'text-white/70 hover:text-white transition-colors'} text-center`}
             >
               TEAM
-            </a>
-            <a
-              href="#"
-              className="font-montserrat font-light text-[13px] leading-6 text-white/70 hover:text-white transition-colors"
+            </button>
+            <button
+              onClick={() => scrollToSection('resources')}
+              className={`font-montserrat font-light text-[13px] leading-6 ${activeSection === 'resources' ? 'text-white' : 'text-white/70 hover:text-white transition-colors'} text-center`}
             >
               RESOURCES
-            </a>
+            </button>
             <div className="flex items-center justify-center pt-2">
               <a
                 href="#"

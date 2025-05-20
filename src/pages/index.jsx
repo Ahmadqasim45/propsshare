@@ -5,15 +5,38 @@ import ServicesSection from '../components/servicessection/services'; // Import 
 import PropertyInvestmentApp from '../components/stepsection/steps'; // Import the PropertyInvestmentApp component
 import RoadMap from "../components/RoadMap"
 import MarketStats from '../components/MarketStats';
-const HomePage = () => {
+import TeamSection from '../components/teamsection/TeamSection';
+
+const HomePage = () => {  // Add scroll behavior to the HTML element for smooth scrolling
+  React.useEffect(() => {
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
+    return () => {
+      document.documentElement.style.scrollBehavior = '';
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen">
       <Navbar />
-      <Hero />
-      <ServicesSection />
-      {/* <PropertyInvestmentApp /> */}
-      <RoadMap />
-      <MarketStats />
+      <section id="home">
+        <Hero />
+      </section>
+      <section id="services">
+        <ServicesSection />
+      </section>
+      <section id="howItWorks">
+        <RoadMap />
+      </section>
+      <section id="market">
+        <MarketStats />
+      </section>
+      <section id="team">
+        <TeamSection />
+      </section>
+      <section id="resources">
+        {/* Resources section will be added here */}
+      </section>
     </div>
   );
 };

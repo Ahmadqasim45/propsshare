@@ -5,7 +5,7 @@ export default function PropertyInvestmentApp() {
   const [currentStep, setCurrentStep] = useState(1);
 
   return (
-    <div className="bg-transparent flex justify-center items-center  text-white  py-12">
+    <div className="bg-transparent flex justify-center items-center text-white py-12">
       <div className="w-full max-w-6xl flex flex-col md:flex-row gap-4">
         {/* Step 1: Create Account */}
         <div className={`relative flex-1 rounded-xl border ${currentStep === 1 ? 'border-pink-500' : 'border-gray-700'} p-6 flex flex-col`}>
@@ -71,10 +71,8 @@ export default function PropertyInvestmentApp() {
               View more
             </button>
           </div>
-        </div>
-
-        {/* Step 2: Buy Shares */}
-        <div className={`relative flex-1 rounded-xl border ${currentStep === 2 ? 'border-teal-400' : 'border-gray-700'} p-6 flex flex-col`}>
+        </div>        {/* Step 2: Buy Shares */}
+        <div className={`relative flex-1 rounded-xl border ${currentStep === 2 ? 'border-[#60CACB]' : 'border-gray-700'} p-6 flex flex-col`}>
           <div className="absolute top-4 right-4 bg-teal-400 text-white w-8 h-8 flex items-center justify-center rounded-full">
             2
           </div>
@@ -133,32 +131,35 @@ export default function PropertyInvestmentApp() {
           </div>
         </div>
 
-        {/* Step 3: Success */}
+        {/* Step 3: Success - UPDATED */}
         <div className={`relative flex-1 rounded-xl border ${currentStep === 3 ? 'border-blue-500' : 'border-gray-700'} p-6 flex flex-col`}>
-          <div className="absolute top-4 right-4 bg-blue-500 text-white w-8 h-8 flex items-center justify-center rounded-full">
+          <div className="absolute top-4 right-4 bg-blue-600 text-white w-8 h-8 flex items-center justify-center rounded-full">
             3
           </div>
           
-          <div className="mt-8 mb-8">
+          <div className="mt-8 mb-4">
             <h2 className="uppercase font-bold mb-4">Success</h2>
             <p className="text-sm text-gray-300">
               Congratulations! You have made your ever first invest into a real world asset, secured by the leading blockchain Ethereum.
             </p>
           </div>
           
-          <div className="flex flex-col items-center justify-center flex-grow">
-            <div className="w-24 h-24 rounded-full border-4 border-teal-400 flex items-center justify-center mb-6">
-              <Check size={48} className="text-teal-400" />
+          <div className="flex flex-col items-center justify-center flex-grow mt-4">
+            {/* Dark background area */}
+            <div className="bg-gray-900/80 w-full rounded-xl p-6 flex flex-col items-center">
+              <div className="w-20 h-20 border-4 border-teal-400 rounded-full flex items-center justify-center mb-6">
+                <Check size={40} className="text-teal-400" />
+              </div>
+              
+              <h3 className="font-medium text-lg mb-2">Investment Successful!</h3>
+              <p className="text-sm text-gray-400 text-center mb-6">
+                You have successfully invested £5000 in Riverside Apartment.
+              </p>
+              
+              <button className="bg-pink-600 text-white py-2 px-6 rounded-full font-medium hover:bg-pink-700 transition-colors">
+                View More Properties
+              </button>
             </div>
-            
-            <h3 className="font-bold text-lg mb-2">Investment Successful!</h3>
-            <p className="text-sm text-gray-300 text-center mb-8">
-              You have successfully invested £5000 in Riverside Apartment.
-            </p>
-            
-            <button className="bg-pink-500 text-white py-3 px-4 rounded-md font-medium">
-              View More Properties
-            </button>
           </div>
         </div>
       </div>

@@ -1,9 +1,16 @@
 import React from 'react';
+import groupBg from "../../assets/images/group-bg.png"; // Vertical lines background image
 
 const ResourcesSection = () => {
-  return (
-    <section className="bg-[#0D0F14] text-white py-24">
-      <div className="max-w-7xl mx-auto px-4">
+  return (    <section className="bg-primary text-white py-24 relative overflow-hidden">
+      {/* Vertical lines background */}
+      <div className="absolute inset-0 opacity-30 z-0">
+        <div className="absolute w-full h-full">
+          <img src={groupBg} alt="" className="w-full h-full object-cover" />
+        </div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Heading */}
         <div className="mb-12">
           <p className="text-xs uppercase tracking-widest text-[#A1A1A1]">Files</p>

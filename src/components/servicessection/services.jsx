@@ -30,9 +30,9 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4 sm:px-6 xl:px-12 relative z-10 max-w-7xl">
         {/* Section header */}
         <div className="mb-16 pt-8 lg:pt-12">
-          <p className="text-sm uppercase text-[#FF0077] mb-2 tracking-wider font-medium">WHAT WE DO</p>
+          <p className="text-sm uppercase text-[#FFFFF] mb-2 tracking-wider font-medium">WHAT WE DO</p>
           <h2 className="text-3xl md:text-5xl font-bold text-white">THE DIFFERENCE</h2>
-          <div className="w-20 h-1 bg-[#FF0077] mt-4"></div>
+          <div className="w-20 h-1  mt-4"></div>
         </div>
         {/* Services grid - restructured for proper layout */}        <div className="grid grid-cols-1 lg:grid-cols-3 gap-7 lg:gap-8">          {/* Property image - takes up full height and first position */}          <div className="lg:col-span-1 h-[525px] p-0 bg-[#00000080] backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 transform transition-transform hover:scale-[1.02] duration-300">
             <img 
@@ -94,9 +94,9 @@ const ServicesSection = () => {
         
         {/* Footer text */}
         <div className="mt-28 mb-8">
-          <p className="text-sm uppercase text-[#FF0077] mb-2 tracking-wider font-medium">THE FLOW</p>
+          <p className="text-sm uppercase text-[#FFFFFF] mb-2 tracking-wider font-medium">THE FLOW</p>
           <h2 className="text-3xl md:text-5xl font-bold text-white">HOW IT WORKS</h2>
-          <div className="w-20 h-1 bg-[#FF0077] mt-4"></div>
+        
         </div>
       </div>
     </div>

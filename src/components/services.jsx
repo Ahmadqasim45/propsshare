@@ -1,13 +1,12 @@
 import React from "react";
 // Import Math.PI if needed
-import { PI } from "Math";
+
 import toprightellipse from "../assets/images/services section background  top.png"; // Placeholder for the top-right image/shape
 import ellipseleft from "../assets/images/services section background  left.png"; // Placeholder for the left image/shape
 import pinkmodernproperty from "../assets/images/first card image.png"; // Placeholder for the pink modern property image
 const ServicesSection = () => {
-  return (    <div className="relative w-full bg-[#070419] text-white py-0 md:py-20 overflow-hidden">
-      {/* Background ellipse image at the top right */}
-      <div className="absolute top-0 right-0 w-1/2 overflow-hidden">
+  return (    <div className="relative w-full bg-gray-900 text-white py-0 md:py-20 overflow-hidden">
+      {/* Background ellipse image at the top right */}      <div className="absolute top-0 right-0 w-1/2 overflow-hidden">
         <img 
           src={toprightellipse}
           alt="Background shape" 
@@ -31,20 +30,25 @@ const ServicesSection = () => {
           <h2 className="text-3xl md:text-5xl font-bold text-white">THE DIFFERENCE</h2>
           <div className="w-20 h-1 bg-[#FF0077] mt-4"></div>
         </div>
-        {/* Services grid - restructured for proper layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-7 lg:gap-8">
-          {/* Property image - takes up full height and first position */}
-          <div className="lg:col-span-1 h-[500px] rounded-2xl overflow-hidden shadow-xl shadow-[#FF0077]/10 transform transition-transform hover:scale-[1.02] duration-300">            <img 
+        {/* Services grid - restructured for proper layout */}        <div className="grid grid-cols-1 lg:grid-cols-3 gap-7 lg:gap-8">          {/* Property image - takes up full height and first position */}          <div className="lg:col-span-1 h-[525px] p-0 bg-gradient-to-br from-[#121033]/90 to-[#0d0b24]/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-[#2b2853]/50 transform transition-transform hover:scale-[1.02] duration-300">
+            <img 
               src={pinkmodernproperty} 
               alt="Pink modern property" 
-              className="w-full h-full object-cover object-center rounded-2xl"
+              className="w-full h-full object-cover"
+              style={{ 
+                display: 'block', 
+                width: '100%', 
+                height: '100%',
+                borderRadius: 'inherit',
+                objectPosition: 'center'
+              }}
             />
           </div>
           
           {/* 2x2 Grid for the 4 service cards */}
           <div className="lg:col-span-2">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-7">              {/* No wallet needed */}
-              <div className="bg-gradient-to-br from-[#121033]/90 to-[#0d0b24]/80 backdrop-blur-sm p-8 rounded-2xl border border-[#2b2853]/50 shadow-lg shadow-[#FF0077]/5 transform transition-transform hover:translate-y-[-5px] duration-300 relative overflow-hidden group h-[250px]">
+              <div className="bg-gradient-to-br from-[#121033]/90 to-[#0d0b24]/80 backdrop-blur-sm p-8 rounded-2xl border border-[#2b2853]/50  transform transition-transform hover:translate-y-[-5px] duration-300 relative overflow-hidden group h-[250px]">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#FF0077]/0 via-[#FF0077]/0 to-[#FF0077]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <h3 className="uppercase text-sm font-bold mb-4 text-white">NO WALLET NEEDED</h3>
                 <p className="text-white/80 text-sm font-light leading-relaxed">
@@ -60,7 +64,7 @@ const ServicesSection = () => {
                   </div>
                 </div>
               </div>              {/* Fully regulated */}
-              <div className="bg-gradient-to-br from-[#121033]/90 to-[#0d0b24]/80 backdrop-blur-sm p-8 rounded-2xl border border-[#2b2853]/50 shadow-lg shadow-[#FF0077]/5 transform transition-transform hover:translate-y-[-5px] duration-300 relative overflow-hidden group h-[250px]">
+              <div className="bg-gradient-to-br from-[#121033]/90 to-[#0d0b24]/80 backdrop-blur-sm p-8 rounded-2xl border border-[#2b2853]/50  transform transition-transform hover:translate-y-[-5px] duration-300 relative overflow-hidden group h-[250px]">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#FF0077]/0 via-[#FF0077]/0 to-[#FF0077]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <h3 className="uppercase text-sm font-bold mb-4 text-white">FULLY REGULATED</h3>
                 <p className="text-white/80 text-sm font-light leading-relaxed">
@@ -75,7 +79,7 @@ const ServicesSection = () => {
                   </div>
                 </div>
               </div>              {/* Blockchain secured */}
-              <div className="bg-gradient-to-br from-[#121033]/90 to-[#0d0b24]/80 backdrop-blur-sm p-8 rounded-2xl border border-[#2b2853]/50 shadow-lg shadow-[#FF0077]/5 transform transition-transform hover:translate-y-[-5px] duration-300 relative overflow-hidden group h-[250px]">
+              <div className="bg-gradient-to-br from-[#121033]/90 to-[#0d0b24]/80 backdrop-blur-sm p-8 rounded-2xl border border-[#2b2853]/50  transform transition-transform hover:translate-y-[-5px] duration-300 relative overflow-hidden group h-[250px]">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#FF0077]/0 via-[#FF0077]/0 to-[#FF0077]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <h3 className="uppercase text-sm font-bold mb-4 text-white">BLOCKCHAIN SECURED</h3>
                 <p className="text-white/80 text-sm font-light leading-relaxed">
@@ -90,7 +94,7 @@ const ServicesSection = () => {
                   </div>
                 </div>
               </div>              {/* We pay your fees */}
-              <div className="bg-gradient-to-br from-[#121033]/90 to-[#0d0b24]/80 backdrop-blur-sm p-8 rounded-2xl border border-[#2b2853]/50 shadow-lg shadow-[#FF0077]/5 transform transition-transform hover:translate-y-[-5px] duration-300 relative overflow-hidden group h-[250px]">
+              <div className="bg-gradient-to-br from-[#121033]/90 to-[#0d0b24]/80 backdrop-blur-sm p-8 rounded-2xl border border-[#2b2853]/50  transform transition-transform hover:translate-y-[-5px] duration-300 relative overflow-hidden group h-[250px]">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#FF0077]/0 via-[#FF0077]/0 to-[#FF0077]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <h3 className="uppercase text-sm font-bold mb-4 text-white">WE PAY YOUR FEES</h3>
                 <p className="text-white/80 text-sm font-light leading-relaxed">

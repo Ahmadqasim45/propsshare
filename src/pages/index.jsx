@@ -1,8 +1,8 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero'; 
-import ServicesSection from '../components/services'; // Import the ServicesSection component         
-import PropertyInvestmentApp from '../components/steps'; // Import the PropertyInvestmentApp component
+import Navbar from '../components/navbar/Navbar';
+import Hero from '../components/herosection/Hero'; 
+import ServicesSection from '../components/servicessection/services'; // Import the ServicesSection component         
+import PropertyInvestmentApp from '../components/stepsection/steps'; // Import the PropertyInvestmentApp component
 import RoadMap from "../components/RoadMap"
 import MarketStats from '../components/MarketStats';
 const HomePage = () => {

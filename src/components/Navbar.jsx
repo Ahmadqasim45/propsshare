@@ -3,7 +3,7 @@ import navbarLogo from "../assets/images/logo.png";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
+
   return (
     <>
       {/* Desktop Navbar - Only visible on desktop (md and larger) */}
@@ -19,7 +19,7 @@ const Navbar = () => {
               />
             </div>
           </div>
-          
+
           {/* Desktop Navigation - Centered */}
           <div className="flex items-center justify-center flex-1 space-x-8 px-4">
             <a
@@ -65,7 +65,7 @@ const Navbar = () => {
               RESOURCES
             </a>
           </div>
-          
+
           {/* Right section with icons and CTA */}
           <div className="flex items-center space-x-6 shrink-0">
             {/* Telegram icon */}
@@ -95,7 +95,7 @@ const Navbar = () => {
                 />
               </svg>
             </a>
-            
+
             {/* Twitter/X icon */}
             <a
               href="#"
@@ -116,7 +116,7 @@ const Navbar = () => {
                 />
               </svg>
             </a>
-            
+
             {/* CTA Button */}
             <a
               href="#"
@@ -206,7 +206,9 @@ const Navbar = () => {
         {/* Mobile menu dropdown */}
         <div
           className={`absolute top-full left-0 right-0 mt-2 px-4 py-4 bg-gray-900/90 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-700/30 transition-all duration-300 ease-in-out transform ${
-            mobileMenuOpen ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
+            mobileMenuOpen
+              ? "opacity-100 scale-100"
+              : "opacity-0 scale-95 pointer-events-none"
           }`}
         >
           <div className="flex flex-col space-y-5 px-2 text-center">

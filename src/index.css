@@ -18,11 +18,17 @@ code {
     monospace;
 }
 
-
+.bg-primary{
+  background-color: rgb(7, 9, 19);
+}
 .bg-purple{
   background-color: #FF2A86;
 }
 
 .border-purple{
   border-color: #FF2A86;
+}
+
+.bg-transparent{
+  background-color: rgba(0, 0, 0, 0.5);
 }

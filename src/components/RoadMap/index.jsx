@@ -1,14 +1,16 @@
 import React from "react";
 import bgImg from "../../assets/images/roadmap-bg.png"; // Placeholder for the background image
 import listImg from "../../assets/images/listitem.png"; // Placeholder for the tick icon
-import roadMapBg from "../../assets/images/roadmap-combine.png"; // Placeholder for the roadmap 
+import roadMapBg from "../../assets/images/roadmap-combine.png"; // Placeholder for the roadmap
 import groupBg from "../../assets/images/group-bg.png"; // Placeholder for the group background image
+import PropertyInvestmentApp from "../steps";
+import MarketStats from "../MarketStats";
 // background image
 const Roadmap = () => {
   return (
     <>
       <div
-        className="min-h-screen py-12 text-white"
+        className="min-h-screen relative pb-12 text-white"
         style={{
           background: `url(${roadMapBg})`,
           backgroundPosition: "bottom",
@@ -17,7 +19,8 @@ const Roadmap = () => {
           backgroundColor: "#070913",
         }}
       >
-        <div className="container mx-auto px-4 sm:px-6 xl:px-12 max-w-7xl">
+        <PropertyInvestmentApp />
+        <div className="container relative z-10 mt-12 mx-auto px-4 sm:px-6 xl:px-12 max-w-7xl">
           {/* Header */}
           <div className="mb-8">
             <div className="text-sm uppercase tracking-wider text-gray-400">
@@ -215,11 +218,8 @@ const Roadmap = () => {
             </div>
           </div>
         </div>
+        {/* <MarketStats   /> */}
       </div>
-
-      {/* <div className="extra-bg" >
-        <img src={groupBg} alt="" />
-      </div> */}
     </>
   );
 };

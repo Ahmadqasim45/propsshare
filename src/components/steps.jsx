@@ -5,7 +5,7 @@ export default function PropertyInvestmentApp() {
   const [currentStep, setCurrentStep] = useState(1);
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-900 text-white top-0 p-4">
+    <div className="bg-transparent flex justify-center items-center  text-white  py-12">
       <div className="w-full max-w-6xl flex flex-col md:flex-row gap-4">
         {/* Step 1: Create Account */}
         <div className={`relative flex-1 rounded-xl border ${currentStep === 1 ? 'border-pink-500' : 'border-gray-700'} p-6 flex flex-col`}>

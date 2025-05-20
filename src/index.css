@@ -17,3 +17,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.bg-purple{
+  background-color: #FF2A86;
+}
+
+.border-purple{
+  border-color: #FF2A86;
+}

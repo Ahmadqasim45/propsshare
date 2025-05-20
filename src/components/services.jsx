@@ -1,6 +1,6 @@
 import React from "react";
 // Import Math.PI if needed
-import { PI } from "Math";
+// import { PI } from "Math";
 import toprightellipse from "../assets/images/services section background  top.png"; // Placeholder for the top-right image/shape
 import ellipseleft from "../assets/images/services section background  left.png"; // Placeholder for the left image/shape
 import pinkmodernproperty from "../assets/images/first card image.png"; // Placeholder for the pink modern property image

@@ -3,7 +3,7 @@ import bgImg from "../../assets/images/roadmap-bg.png"; // Placeholder for the b
 import listImg from "../../assets/images/listitem.png"; // Placeholder for the tick icon
 import roadMapBg from "../../assets/images/roadmap-combine.png"; // Placeholder for the roadmap
 import groupBg from "../../assets/images/group-bg.png"; // Placeholder for the group background image
-import PropertyInvestmentApp from "../steps";
+import PropertyInvestmentApp from "../stepsection/steps";
 import MarketStats from "../MarketStats";
 // background image
 const Roadmap = () => {

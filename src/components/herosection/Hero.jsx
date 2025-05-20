@@ -1,5 +1,5 @@
 import React from "react";
-import heroimage from "../assets/images/hero background vertical shape 1.jpg"; // Placeholder for the top-right image/shape
+import heroimage from "../../assets/images/hero background vertical shape 1.jpg"; // Placeholder for the top-right image/shape
 const HeroSection = () => {
   return (
     <div className="relative min-h-screen w-full overflow-hidden">

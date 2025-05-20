@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import navbarLogo from "../assets/images/logo.png";
+import navbarLogo from "../../assets/images/logo.png";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

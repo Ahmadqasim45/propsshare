@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Check, MapPin } from "lucide-react";
-import workimage from '../assets/images/steps work card image.png'; // Placeholder for the work image
+import workimage from '../../assets/images/steps work card image.png'; // Placeholder for the work image
 export default function PropertyInvestmentApp() {
   const [currentStep, setCurrentStep] = useState(1);
 

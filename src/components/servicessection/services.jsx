@@ -1,13 +1,13 @@
 import React from "react";
 // Import Math.PI if needed
 
-import toprightellipse from "../assets/images/services section background  top.png"; // Placeholder for the top-right image/shape
-import ellipseleft from "../assets/images/services section background  left.png"; // Placeholder for the left image/shape
-import pinkmodernproperty from "../assets/images/first card image.png"; // Placeholder for the pink modern property image
-import firstCardIcon from "../assets/images/first card icon.png"; // Import first card icon
-import secondCardIcon from "../assets/images/second card icon.png"; // Import second card icon
-import thirdCardIcon from "../assets/images/third card icon.png"; // Import third card icon
-import fourthCardIcon from "../assets/images/fourthicon.png"; // Import fourth card icon
+import toprightellipse from "../../assets/images/services section background  top.png"; // Placeholder for the top-right image/shape
+import ellipseleft from "../../assets/images/services section background  left.png"; // Placeholder for the left image/shape
+import pinkmodernproperty from "../../assets/images/first card image.png"; // Placeholder for the pink modern property image
+import firstCardIcon from "../../assets/images/first card icon.png"; // Import first card icon
+import secondCardIcon from "../../assets/images/second card icon.png"; // Import second card icon
+import thirdCardIcon from "../../assets/images/third card icon.png"; // Import third card icon
+import fourthCardIcon from "../../assets/images/fourthicon.png"; // Import fourth card icon
 const ServicesSection = () => {
   return (    <div className="relative w-full bg-gray-900 text-white py-0 md:py-20 overflow-hidden">
       {/* Background ellipse image at the top right */}      <div className="absolute top-0 right-0 w-1/2 overflow-hidden">

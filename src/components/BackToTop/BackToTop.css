@@ -1,0 +1,149 @@
+/* Back to Top Button Styles */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+}
+
+.back-to-top-btn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: transparent;
+  outline: none;
+  overflow: hidden;
+}
+
+.btn-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.btn-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(255, 45, 85, 0.1) 0%, 
+    rgba(255, 45, 85, 0.2) 50%, 
+    rgba(255, 45, 85, 0.1) 100%);
+  border: 1px solid rgba(255, 45, 85, 0.3);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.btn-glow {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  background: linear-gradient(45deg, 
+    transparent, 
+    rgba(255, 45, 85, 0.4), 
+    transparent, 
+    rgba(255, 45, 85, 0.4), 
+    transparent);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s ease;
+  animation: rotate 3s linear infinite;
+}
+
+.arrow-up {
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+  z-index: 3;
+  position: relative;
+}
+
+/* Hover Effects */
+.back-to-top-btn:hover .btn-bg {
+  background: linear-gradient(135deg, 
+    rgba(255, 45, 85, 0.2) 0%, 
+    rgba(255, 45, 85, 0.4) 50%, 
+    rgba(255, 45, 85, 0.2) 100%);
+  border-color: rgba(255, 45, 85, 0.6);
+  transform: scale(1.05);
+}
+
+.back-to-top-btn:hover .btn-glow {
+  opacity: 1;
+}
+
+.back-to-top-btn:hover .arrow-up {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.back-to-top-btn:active {
+  transform: scale(0.95);
+}
+
+/* Animation for the rotating glow */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Fade in animation */
+.back-to-top {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .back-to-top-btn {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .arrow-up svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Dark theme compatibility */
+@media (prefers-color-scheme: dark) {
+  .btn-bg {
+    background: linear-gradient(135deg, 
+      rgba(0, 0, 0, 0.3) 0%, 
+      rgba(255, 45, 85, 0.2) 50%, 
+      rgba(0, 0, 0, 0.3) 100%);
+  }
+}

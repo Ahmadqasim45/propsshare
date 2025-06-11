@@ -1,17 +1,14 @@
 import React from 'react';
 import Navbar from '../components/navbar/Navbar';
 import Hero from '../components/herosection/Hero'; 
-import ServicesSection from '../components/servicessection/services';
-import PropertyInvestmentApp from '../components/stepsection/steps';
+import ServicesSection from '../components/servicessection/services'; // Import the ServicesSection component         
+import PropertyInvestmentApp from '../components/stepsection/steps'; // Import the PropertyInvestmentApp component
 import RoadMap from "../components/RoadMap"
 import MarketStats from '../components/MarketStats';
 import TeamSection from '../components/teamsection/TeamSection';
-import ResourcesSection from '../components/resources-section/ResourcesSection';
-import MainFooter from '../components/footer/footer';
-import TokenCarousel from '../components/governance/governance';
+import BackToTop from '../components/BackToTop/BackToTop';
 
-
-const HomePage = () => {
+const HomePage = () => {  // Add scroll behavior to the HTML element for smooth scrolling
   React.useEffect(() => {
     document.documentElement.style.scrollBehavior = 'smooth';
     
@@ -37,14 +34,10 @@ const HomePage = () => {
       </section>
       <section id="team">
         <TeamSection />
+      </section>      <section id="resources">
+        {/* Resources section will be added here */}
       </section>
-      <section id="governance">
-        <TokenCarousel />
-      </section>
-      <section id="resources">
-        <ResourcesSection />
-      </section>
-      <MainFooter />
+      <BackToTop />
     </div>
   );
 };

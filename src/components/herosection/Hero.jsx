@@ -1,7 +1,5 @@
 import React from "react";
 import heroimage from "../../assets/images/hero background vertical shape 1.jpg"; // Placeholder for the top-right image/shape
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTelegram, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 const HeroSection = () => {
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
@@ -16,46 +14,65 @@ const HeroSection = () => {
           />
         </div>
       </div>
-  {/* <Navbar /> */}
-      {/* Content container */}
+  {/* <Navbar /> */}      {/* Content container */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-center top-20">
         {/* Main heading */}
-        <h6 className="text-4xl md:text-5xl lg:text-6xl  font-bold text-white w-1400 mx-auto leading-tight">
+        <h6 
+          className="text-4xl md:text-5xl lg:text-6xl  font-bold text-white w-1400 mx-auto leading-tight"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           We make Real World Assets
           <br />
           easy and accessible to everyone
         </h6>
 
         {/* Subheading */}
-        <p className="mt-6 text-sm md:text-base text-gray-200 max-w-2xl mx-auto">
+        <p 
+          className="mt-6 text-sm md:text-base text-gray-200 max-w-2xl mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
           Empower your portfolio with high class UK properties.
           <br />
           Signup with your Gmail and account and dive deep into the world of Blockchain.
         </p>        {/* CTA Button */}
-        <div className="mt-10">
+        <div 
+          className="mt-10"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
           <a
-            href="#waitlist"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById('resources')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }}
+            href="#"
             className="inline-flex items-center justify-center px-8 py-3 bg-pink-600 text-white font-medium rounded-full hover:bg-pink-700 transition-colors"
           >
             Join the waitlist
           </a>
-        </div>{/* Social icons */}
-        <div className="mt-12 flex items-center justify-center space-x-4">
+        </div>
+
+        {/* Social icons */}
+        <div 
+          className="mt-12 flex items-center justify-center space-x-4"
+          data-aos="fade-up"
+          data-aos-delay="800"
+        >
           {/* Telegram icon */}
-          <a href="https://t.me/propshare" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300" aria-label="Join our Telegram group">
+          <a href="#" className="text-white hover:text-gray-300">
             <div className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center">
-              <FontAwesomeIcon icon={faTelegram} className="h-4 w-4" />
+              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 2L11 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </div>
           </a>
           
           {/* X/Twitter icon */}
-          <a href="https://x.com/propshare" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300" aria-label="Follow us on X (Twitter)">
+          <a href="#" className="text-white hover:text-gray-300">
             <div className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center">
-              <FontAwesomeIcon icon={faXTwitter} className="h-4 w-4" />
+              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </div>
           </a>
         </div>

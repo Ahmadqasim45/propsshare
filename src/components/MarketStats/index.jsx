@@ -14,18 +14,16 @@ const MarketStats = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-8 md:mb-16 pt-12">
+        <div className="text-center mb-8 md:mb-16 pt-12" data-aos="fade-up">
           <div className="text-xs md:text-sm uppercase tracking-wider text-gray-400">
             WHAT WE SEE
           </div>
           <div className="text-2xl md:text-3xl font-bold">
             MARKET STATISTICS
           </div>
-        </div>
-
-        {/* Mobile view - stack cards vertically */}
+        </div>        {/* Mobile view - stack cards vertically */}
         <div className="md:hidden flex flex-col gap-6">
-          <div className="w-full">
+          <div className="w-full" data-aos="fade-up" data-aos-delay="200">
             <div
               className="bg-transparent rounded-2xl border border-opacity-80 py-6 px-5"
               style={{ borderColor: "#E693F2", backdropFilter: "blur(3px)" }}

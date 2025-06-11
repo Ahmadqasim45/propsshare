@@ -22,7 +22,7 @@ const Roadmap = () => {
         <PropertyInvestmentApp />
         <div className="container relative z-10 mt-12 mx-auto px-4 sm:px-6 xl:px-12 max-w-7xl">
           {/* Header */}
-          <div className="mb-8">
+          <div className="mb-8" data-aos="fade-up">
             <div className="text-sm uppercase tracking-wider text-gray-400">
               OUR PLAN
             </div>

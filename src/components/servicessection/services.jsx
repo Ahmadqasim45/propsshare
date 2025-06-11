@@ -27,14 +27,17 @@ const ServicesSection = () => {
         />
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 xl:px-12 relative z-10 max-w-7xl">
-        {/* Section header */}
-        <div className="mb-16 pt-8 lg:pt-12">
-          <p className="text-sm uppercase text-[#FFFFF] mb-2 tracking-wider font-medium">WHAT WE DO</p>
+      <div className="container mx-auto px-4 sm:px-6 xl:px-12 relative z-10 max-w-7xl">        {/* Section header */}
+        <div className="mb-16 pt-8 lg:pt-12" data-aos="fade-up">
+          <p className="text-sm uppercase text-[#FF0077] mb-2 tracking-wider font-medium">WHAT WE DO</p>
           <h2 className="text-3xl md:text-5xl font-bold text-white">THE DIFFERENCE</h2>
-          <div className="w-20 h-1  mt-4"></div>
+          <div className="w-20 h-1 bg-[#FF0077] mt-4"></div>
         </div>
-        {/* Services grid - restructured for proper layout */}        <div className="grid grid-cols-1 lg:grid-cols-3 gap-7 lg:gap-8">          {/* Property image - takes up full height and first position */}          <div className="lg:col-span-1 h-[525px] p-0 bg-[#00000080] backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 transform transition-transform hover:scale-[1.02] duration-300">
+        {/* Services grid - restructured for proper layout */}        <div className="grid grid-cols-1 lg:grid-cols-3 gap-7 lg:gap-8">          {/* Property image - takes up full height and first position */}          <div 
+            className="lg:col-span-1 h-[525px] p-0 bg-[#00000080] backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 transform transition-transform hover:scale-[1.02] duration-300"
+            data-aos="fade-right"
+            data-aos-delay="200"
+          >
             <img 
               src={pinkmodernproperty} 
               alt="Pink modern property" 
@@ -51,7 +54,12 @@ const ServicesSection = () => {
           
           {/* 2x2 Grid for the 4 service cards */}
           <div className="lg:col-span-2">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-7">              {/* No wallet needed */}              <div className="bg-[#00000080] backdrop-blur-sm p-8 rounded-2xl border border-white/20 transform transition-transform hover:translate-y-[-5px] duration-300 relative overflow-hidden group h-[250px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+              {/* No wallet needed */}              <div 
+                className="bg-[#00000080] backdrop-blur-sm p-8 rounded-2xl border border-white/20 transform transition-transform hover:translate-y-[-5px] duration-300 relative overflow-hidden group h-[250px]"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 <div className="absolute inset-0 bg-gradient-to-r from-[#FF0077]/0 via-[#FF0077]/0 to-[#FF0077]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <h3 className="uppercase text-sm font-bold mb-4 text-white">NO WALLET NEEDED</h3>
                 <p className="text-white/80 text-sm font-light leading-relaxed">
@@ -60,7 +68,11 @@ const ServicesSection = () => {
                 <div className="absolute bottom-6 right-6 w-16 h-16">
                   <img src={firstCardIcon} alt="No Wallet Needed Icon" className="w-full h-full object-contain" />
                 </div>
-              </div>{/* Fully regulated */}              <div className="bg-[#00000080] backdrop-blur-sm p-8 rounded-2xl border border-white/20 transform transition-transform hover:translate-y-[-5px] duration-300 relative overflow-hidden group h-[250px]">
+              </div>{/* Fully regulated */}              <div 
+                className="bg-[#00000080] backdrop-blur-sm p-8 rounded-2xl border border-white/20 transform transition-transform hover:translate-y-[-5px] duration-300 relative overflow-hidden group h-[250px]"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
                 <div className="absolute inset-0 bg-gradient-to-r from-[#FF0077]/0 via-[#FF0077]/0 to-[#FF0077]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <h3 className="uppercase text-sm font-bold mb-4 text-white">FULLY REGULATED</h3>
                 <p className="text-white/80 text-sm font-light leading-relaxed">
@@ -69,7 +81,11 @@ const ServicesSection = () => {
                 <div className="absolute bottom-6 right-6 w-16 h-16">
                   <img src={secondCardIcon} alt="Fully Regulated Icon" className="w-full h-full object-contain" />
                 </div>
-              </div>{/* Blockchain secured */}              <div className="bg-[#00000080] backdrop-blur-sm p-8 rounded-2xl border border-white/20 transform transition-transform hover:translate-y-[-5px] duration-300 relative overflow-hidden group h-[250px]">
+              </div>{/* Blockchain secured */}              <div 
+                className="bg-[#00000080] backdrop-blur-sm p-8 rounded-2xl border border-white/20 transform transition-transform hover:translate-y-[-5px] duration-300 relative overflow-hidden group h-[250px]"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
                 <div className="absolute inset-0 bg-gradient-to-r from-[#FF0077]/0 via-[#FF0077]/0 to-[#FF0077]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <h3 className="uppercase text-sm font-bold mb-4 text-white">BLOCKCHAIN SECURED</h3>
                 <p className="text-white/80 text-sm font-light leading-relaxed">
@@ -78,7 +94,11 @@ const ServicesSection = () => {
                 <div className="absolute bottom-6 right-6 w-16 h-16">
                   <img src={thirdCardIcon} alt="Blockchain Secured Icon" className="w-full h-full object-contain" />
                 </div>
-              </div>{/* We pay your fees */}              <div className="bg-[#00000080] backdrop-blur-sm p-8 rounded-2xl border border-white/20 transform transition-transform hover:translate-y-[-5px] duration-300 relative overflow-hidden group h-[250px]">
+              </div>{/* We pay your fees */}              <div 
+                className="bg-[#00000080] backdrop-blur-sm p-8 rounded-2xl border border-white/20 transform transition-transform hover:translate-y-[-5px] duration-300 relative overflow-hidden group h-[250px]"
+                data-aos="fade-up"
+                data-aos-delay="600"
+              >
                 <div className="absolute inset-0 bg-gradient-to-r from-[#FF0077]/0 via-[#FF0077]/0 to-[#FF0077]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <h3 className="uppercase text-sm font-bold mb-4 text-white">WE PAY YOUR FEES</h3>
                 <p className="text-white/80 text-sm font-light leading-relaxed">
@@ -94,9 +114,9 @@ const ServicesSection = () => {
         
         {/* Footer text */}
         <div className="mt-28 mb-8">
-          <p className="text-sm uppercase text-[#FFFFFF] mb-2 tracking-wider font-medium">THE FLOW</p>
+          <p className="text-sm uppercase text-[#FF0077] mb-2 tracking-wider font-medium">THE FLOW</p>
           <h2 className="text-3xl md:text-5xl font-bold text-white">HOW IT WORKS</h2>
-        
+          <div className="w-20 h-1 bg-[#FF0077] mt-4"></div>
         </div>
       </div>
     </div>
